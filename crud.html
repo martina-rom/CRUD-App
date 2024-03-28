@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./main.css">
+    <title>Market System</title>
+</head>
+<body>
+    <div class="crud">
+        <div class="head">
+            <h2>Hyper</h2>
+            <P>Market MANAGEMENT SYSTEM</P>
+        </div>
+        <div class="inputs">
+            <input type="text" id="name" placeholder="name">
+            <div class="price">
+                <input onkeyup=getTotal() type="number" id="price" placeholder="price">
+                <input onkeyup=getTotal() type="number" id="discount" placeholder="discount">
+                <small onkeyup=getTotal() id="total">0$</small>
+            </div>       
+            <input type="number" id="count" placeholder="count">
+            <input type="text" id="category" placeholder="category">
+            <button id="submit">Create</button>
+        </div>
+        <div class="outputs">
+            <div class="searchBlock">
+                <input type="text" onkeyup="searchProduct(this.value)" id="search" placeholder="search">
+                <div class="btnsearch">
+                    <button onclick="getSearchMood(this.id)" id="searchbyname">Search By Name</button>
+                    <button onclick="getSearchMood(this.id)" id="searchbycategory">Search By Category</button>
+                </div>
+            </div>
+            <div id="deleteAll"></div>
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>price</th>
+                    <th>discount</th>
+                    <th>total</th>
+                    <th>category</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </tr>
+                <tbody id='tbody'>                 
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
